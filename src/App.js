@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import request from './request';
 import { ARTICLES_QUERY } from './queries';
 
+import Header from './components/header';
+import Footer from './components/footer';
+import Content from './components/content';
+
 class App extends Component {
   // definition
   constructor(props) {
@@ -22,8 +26,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Billin code challenge</h2>
-        <pre>{JSON.stringify(this.state.articles, null, 2)}</pre>
+        <Header title="Coding challenge"/>
+        {/* <pre>{JSON.stringify(this.state.articles, null, 2)}</pre> */}
+        <Content articles={this.state.articles}/>
+        <Footer/>
       </div>
     );
   }

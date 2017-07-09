@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+:root{
+  --billin-cyan: #03a9f4;
+  --billin-red: #ff3481;
+  --billin-blue: #1976d2;
+}
+
+body{
+  color: white;
+  font-family: 'Roboto', sans_serif;
+  margin: 0px;
+}
+
+a:link{
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+header{
+  background-color: var(--billin-cyan);
+  padding: 16px;
+}
+
+footer{
+  background-color: var(--billin-blue);
+  padding: 16px;
+}
+
+.header-title{
+  margin: 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link{
+  font-size: 0.8em;
+  margin: 0px 16px;
+  text-transform: uppercase;
+}
+
+.footer-link a{
+  color: white;
+}
+
+.footer-link a:visited{
+  color: white;
+}
+
+.footer-link a:hover{
+  color: var(--billin-red);
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 16px auto;
+  width: 100%;
+}
+
+.content-card{
+  background-color: var(--billin-cyan);
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  box-shadow: 8px 8px 0px 0px var(--billin-blue);
+  padding: 16px;
+  width: 30%;
+}
+
+.content-card-author::after{
+  content: "";
+  display: block;
+  height: 4px;
+  width: 32px;
+  background-color: var(--billin-red);
+}
+
+.content-card-author{
+  font-size: 1.8em;
+  margin: 16px 0px;
+}
+
+@media (max-width: 960px) {
+  .content-card {
+    box-shadow: none;
+    width: 100%;
+  }
+}
