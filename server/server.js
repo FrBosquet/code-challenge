@@ -3,6 +3,7 @@ import GraphHTTP from 'express-graphql';
 import bodyParser from 'body-parser';
 import Schema from './schema';
 
+
 const APP_PORT = 4000;
 
 const app = Express();

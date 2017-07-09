@@ -6,3 +6,10 @@ export const ARTICLES_QUERY = `{
     title
   }
 }`;
+
+export const ARTICLE_DETAIL_QUERY = `{
+  articles {
+    author
+    excerpt
+  }
+}`;
