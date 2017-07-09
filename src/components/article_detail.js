@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import request from '../request';
-import { ARTICLES_QUERY } from '../queries';
-import ContentCard from './content_card';
+import { ARTICLES_QUERY } from '.
 
 class Content extends Component{
   // definition
@@ -22,13 +21,8 @@ class Content extends Component{
   // render
   render(){
     return (
-      <div className="content">
-        {this.state.articles.map((article)=>{
-          return <ContentCard
-            author={article.author}
-            excerpt={article.excerpt}
-            key={article.id}/>
-        })};
+      <div>
+        {this.props.match.params.id}
       </div>
     );
   }

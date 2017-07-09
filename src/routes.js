@@ -5,6 +5,6 @@ import Content from './components/content';
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={Content} />
+    <Route path="/" component={Content}/>
   </Route>
 );

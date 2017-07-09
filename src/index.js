@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, hashHistory} from 'react-router';
-import routes from './routes';
+import { BrowserRouter } from 'react-router-dom'
 import App from './App';
-import Content from './components/content';
 
 ReactDOM.render(
-  // <Router history={hashHistory} routes={routes} />
-  <App>
-    <Content/>
-  </App>
+  <BrowserRouter >
+    <App/>
+  </BrowserRouter>
   , document.getElementById('root'),
 );
+
+/* <App>
+  <Content/>
+</App> */
