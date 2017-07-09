@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
-
+import { Route , Switch } from 'react-router-dom'
 import Header from './components/header';
 import Content from './components/content';
 import ArticleDetail from './components/article_detail';
 import Footer from './components/footer';
 
 class App extends Component {
-
   // Renders
   render() {
     return (

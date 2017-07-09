@@ -74,6 +74,7 @@ footer{
 }
 
 .content-card{
+  border: 1px solid white;
   background-color: var(--billin-cyan);
   box-sizing: border-box;
   margin-bottom: 16px;
