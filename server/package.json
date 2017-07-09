@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --require 'babel-register' server.js"
+    "start": "node --require 'babel-register' server.js",
+    "dev": "nodemon --require 'babel-register' server.js"
   },
   "author": "",
   "license": "ISC",

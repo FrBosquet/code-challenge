@@ -17,6 +17,9 @@ a:link{
   color: inherit;
   transition: color 0.3s;
 }
+a:visited{
+  color:inherit;
+}
 
 header{
   background-color: var(--billin-cyan);
@@ -57,13 +60,17 @@ footer{
   color: var(--billin-red);
 }
 
+.wrapper{
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 16px auto;
+  width: 100%;
+}
+
 .content{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 960px;
-  margin: 16px auto;
-  width: 100%;
 }
 
 .content-card{
@@ -86,6 +93,66 @@ footer{
 .content-card-author{
   font-size: 1.8em;
   margin: 16px 0px;
+}
+
+.article-detail{
+  color: var(--billin-blue);
+  padding: 32px;
+}
+
+.article-detail-author{
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.article-detail-title{
+  color: var(--billin-cyan);
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 0px;
+  text-transform: uppercase;
+}
+
+.article-detail-state{
+  font-weight: bold;
+  margin: 0px;
+  text-align: right;
+}
+
+.article-detail-content{
+  text-align: justify;
+}
+
+.article-detail-footer-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.article-detail-footer-wrapper > div{
+  overflow: hidden;
+}
+
+.article-detail-footer-wrapper > div:first{
+  text-align: left;
+}
+
+.article-detail-footer-wrapper > div:last-child{
+  text-align: right;
+}
+
+.button{
+  background-color: var(--billin-blue);
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin: 4px;
+  padding: 8px;
+}
+
+.article-detail-tag{
+  background-color: var(--billin-red);
 }
 
 @media (max-width: 960px) {

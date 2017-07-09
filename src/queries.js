@@ -7,9 +7,12 @@ export const ARTICLES_QUERY = `{
   }
 }`;
 
-export const ARTICLE_DETAIL_QUERY = `{
-  articles {
+export const ARTICLE_BY_ID = id => `{
+  articleById (id: "${id}") {
     author
-    excerpt
+    content
+    published
+    tags
+    title
   }
 }`;

@@ -3,6 +3,7 @@ import request from '../request';
 import { ARTICLES_QUERY } from '../queries';
 import ContentCard from './content_card';
 
+
 class Content extends Component{
   // definition
   constructor(props) {
@@ -22,12 +23,14 @@ class Content extends Component{
   // render
   render(){
     return (
-      <div className="content">
-        {this.state.articles.map((article)=>{
+      <div className="content wrapper">
+        {this.state.articles.map((article, i)=>{
           return <ContentCard
             author={article.author}
             excerpt={article.excerpt}
-            key={article.id}/>
+            key={i}
+            id={article.id}
+          />
         })};
       </div>
     );
