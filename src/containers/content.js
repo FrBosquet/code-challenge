@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import request from '../request';
 import { ARTICLES_QUERY } from '../queries';
 import Card from '../components/card';
-
+import { readArticles } from '../actions/index';
 
 class Content extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: [],
-    };
-  }
+  constructor({ dispatch }) {
+    super(...arguments);
 
-  componentWillMount() {
-    request(ARTICLES_QUERY).then(response => {
-      this.setState({ articles: response.data.articles });
-    });
+    request(ARTICLES_QUERY)
+      .then(response =>{
+        dispatch(readArticles(response.data.articles));
+      })
   }
 
   render(){
     return (
       <div className="content wrapper">
-        {this.state.articles.map((article, i)=>{
+        {this.props.articles.map((article)=>{
           return <Card
-                    key={i}
+                    key={article.id}
                     id={article.id}
                     author={article.author}
                     excerpt={article.excerpt}/>
@@ -33,4 +30,8 @@ class Content extends Component{
   }
 }
 
-export default Content;
+const mapStateToProps = state =>{
+  return {articles: state.articleReducer.articles || []};
+}
+
+export default connect( mapStateToProps, )(Content);

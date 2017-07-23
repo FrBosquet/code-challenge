@@ -19,10 +19,8 @@ class Content extends Component{
   // lifecycle
   componentWillMount() {
     let query = ARTICLE_BY_ID(this.props.match.params.id);
-    console.log('Query', query);
     request(query).then(response => {
       let {author, content, published, tags, title} = response.data.articleById;
-      console.log(response.data.articleById);
       this.setState({
         author: author,
         content: content,

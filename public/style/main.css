@@ -91,7 +91,7 @@ footer{
   content: "";
   display: block;
   height: 4px;
-  width: 32px;
+  width: 64px;
   background-color: var(--billin-red);
 }
 

@@ -1,10 +1,10 @@
-import types from '../actions/index';
+import {types} from '../actions/index';
 
 const initialState = {
   articles: []
 }
 
-const reducers = (state = initialState, action) => {
+const articleReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.READ_ARTICLES:
       return Object.assign({}, state, {
@@ -32,5 +32,5 @@ const reducers = (state = initialState, action) => {
 }
 
 export {
-  reducers
+  articleReducer
 }

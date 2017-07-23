@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
-import { articlesReducer } from './reducers/index';
+import { articleReducer } from './reducers/index';
 import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 
@@ -8,7 +8,7 @@ export const history = createHistory()
 
 const rootReducer = combineReducers({
  routerReducer,
- articlesReducer
+ articleReducer
 })
 
 const initialState = {}

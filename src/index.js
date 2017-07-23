@@ -7,8 +7,6 @@ import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 import App from './App';
 
-console.log(history);
-
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
