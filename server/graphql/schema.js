@@ -4,10 +4,8 @@ import {
   GraphQLString,
   GraphQLList,
   GraphQLSchema,
-  GraphQLID
-
 } from 'graphql';
-import db from './db';
+import db from '../db';
 
 const articleType = new GraphQLObjectType({
   name: 'Article',
@@ -43,32 +41,8 @@ const Query = new GraphQLObjectType({
   fields: () => ({
     articles: {
       type: new GraphQLList(articleType),
-      description: 'Request every article in the db',
       resolve() {
         return db.Article.find();
-      },
-    },
-    articleById: {
-      type: articleType,
-      description: 'Request an article by its id',
-      args: { id: { type: GraphQLID } },
-      resolve: (_, { id }) => {
-        return db.Article.findById(id);
-      },
-    },
-  }),
-});
-
-const Mutation = new GraphQLObjectType({
-  name: 'Mutation',
-  description: 'This is a root mutation',
-  fields: () => ({
-    delete: {
-      type: new GraphQLList(articleType),
-      description: 'Delete an article fron the db',
-      args: { id: { type: GraphQLID } },
-      resolve(_, { id }) {
-        return db.Article.findOneAndRemove({_id : id});
       },
     },
   }),
@@ -76,7 +50,6 @@ const Mutation = new GraphQLObjectType({
 
 const Schema = new GraphQLSchema({
   query: Query,
-  mutation: Mutation
 });
 
 export default Schema;
