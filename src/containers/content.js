@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import request from '../request';
 import { ARTICLES_QUERY } from '../queries';
-import ContentCard from './content_card';
+import Card from '../components/card';
 
 
 class Content extends Component{
-  // definition
   constructor(props) {
     super(props);
     this.state = {
@@ -13,24 +12,21 @@ class Content extends Component{
     };
   }
 
-  // lifecycle
   componentWillMount() {
     request(ARTICLES_QUERY).then(response => {
       this.setState({ articles: response.data.articles });
     });
   }
 
-  // render
   render(){
     return (
       <div className="content wrapper">
         {this.state.articles.map((article, i)=>{
-          return <ContentCard
-            author={article.author}
-            excerpt={article.excerpt}
-            key={i}
-            id={article.id}
-          />
+          return <Card
+                    key={i}
+                    id={article.id}
+                    author={article.author}
+                    excerpt={article.excerpt}/>
         })};
       </div>
     );

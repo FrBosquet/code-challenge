@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route , Switch } from 'react-router-dom'
 import Header from './components/header';
-import Content from './components/content';
+import Content from './containers/content';
 import ArticleDetail from './components/article_detail';
 import Footer from './components/footer';
 

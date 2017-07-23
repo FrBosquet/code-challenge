@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import { routerMiddleware, routerReducer } from 'react-router-redux'
-import thunk from 'redux-thunk'
-import createHistory from 'history/createBrowserHistory'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { routerMiddleware, routerReducer } from 'react-router-redux';
+import { articlesReducer } from './reducers/index';
+import thunk from 'redux-thunk';
+import createHistory from 'history/createBrowserHistory';
 
 export const history = createHistory()
 
 const rootReducer = combineReducers({
- routing: routerReducer
+ routerReducer,
+ articlesReducer
 })
 
 const initialState = {}
@@ -14,11 +16,10 @@ const enhancers = []
 const middleware = [
   thunk,
   routerMiddleware(history)
-]
+];
 
 if (process.env.NODE_ENV === 'development') {
-  const devToolsExtension = window.devToolsExtension
-
+  const devToolsExtension = window.devToolsExtension;
   if (typeof devToolsExtension === 'function') {
     enhancers.push(devToolsExtension())
   }

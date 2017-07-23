@@ -12,6 +12,10 @@ body{
   margin: 0px;
 }
 
+a{
+  display: inline;
+}
+
 a:link{
   text-decoration: none;
   color: inherit;
